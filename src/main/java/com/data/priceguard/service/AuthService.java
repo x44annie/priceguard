@@ -1,5 +1,6 @@
 package com.data.priceguard.service;
 
+import com.data.priceguard.dto.UserLogin;
 import com.data.priceguard.dto.UserRegister;
 import com.data.priceguard.dto.UserResponse;
 import com.data.priceguard.entity.User;
@@ -22,5 +23,16 @@ public class AuthService {
 
         return new UserResponse(saved.getUid(), saved.getEmail());
 
+    }
+
+    public UserResponse login(UserLogin dto) {
+        User user = userRepository.findByEmail(dto.email())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (!user.getPassword().equals(dto.password())) {
+            throw new RuntimeException("Wrong password");
+        }
+
+        return new UserResponse(user.getUid(), user.getEmail());
     }
 }

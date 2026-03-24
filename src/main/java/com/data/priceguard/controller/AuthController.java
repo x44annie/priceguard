@@ -1,5 +1,6 @@
 package com.data.priceguard.controller;
 
+import com.data.priceguard.dto.UserLogin;
 import com.data.priceguard.dto.UserRegister;
 import com.data.priceguard.dto.UserResponse;
 import com.data.priceguard.service.AuthService;
@@ -25,6 +26,12 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@RequestBody UserRegister dto) {
         UserResponse response = authService.register(dto);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UserResponse> login(@RequestBody UserLogin dto) {
+        UserResponse response = authService.login(dto);
         return ResponseEntity.ok(response);
     }
 }
