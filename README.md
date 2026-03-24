@@ -36,7 +36,7 @@ Set price thresholds on assets and get notified when the market hits them.
 
 ## License
 
-Copyright (C) 2026 Xannie
+Copyright (C) 2026 X44annie
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the **European Union Public Licence (EUPL)**, version 1.1.
