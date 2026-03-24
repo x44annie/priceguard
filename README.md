@@ -31,7 +31,7 @@ Set price thresholds on assets and get notified when the market hits them.
 
 - **JDK 25** (GraalVM recommended)
 - **PostgreSQL** 18+
-- **Spring boot** 4+
+- **Spring boot** 4.0+
 - **Maven** 3.9+
 
 ## License
