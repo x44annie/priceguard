@@ -1,5 +1,6 @@
 package com.data.priceguard.entity;
 
+import com.fasterxml.uuid.Generators;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,7 +15,7 @@ public class Transaction {
     private Long id;
 
     @Column(unique = true, nullable = false, updatable = false, columnDefinition = "uuid")
-    private UUID uid = UUID.randomUUID();
+    private UUID uid = Generators.timeBasedEpochGenerator().generate();
 
     private String symbol;
     private String price;
