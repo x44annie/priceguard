@@ -1,8 +1,8 @@
 package com.data.priceguard.controller;
 
-import com.data.priceguard.dto.UserLogin;
-import com.data.priceguard.dto.UserRegister;
-import com.data.priceguard.dto.UserResponse;
+import com.data.priceguard.dto.request.UserLoginRequest;
+import com.data.priceguard.dto.request.UserRegisterRequest;
+import com.data.priceguard.dto.response.UserResponse;
 import com.data.priceguard.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,13 +24,13 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<UserResponse> register(@RequestBody UserRegister dto) {
+    public ResponseEntity<UserResponse> register(@RequestBody UserRegisterRequest dto) {
         UserResponse response = authService.register(dto);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserResponse> login(@RequestBody UserLogin dto) {
+    public ResponseEntity<UserResponse> login(@RequestBody UserLoginRequest dto) {
         UserResponse response = authService.login(dto);
         return ResponseEntity.ok(response);
     }
