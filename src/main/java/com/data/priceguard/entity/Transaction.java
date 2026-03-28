@@ -22,5 +22,4 @@ public class Transaction extends Base{
 
     private String symbol;
     private BigDecimal price;
-    private String time;
 }
