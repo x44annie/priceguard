@@ -1,8 +1,8 @@
-package com.data.priceguard.dto;
+package com.data.priceguard.dto.request;
 
 import java.math.BigDecimal;
 
-public record CryptoAlert(
+public record CryptoAlertRequest(
         String symbol,
         BigDecimal price
 ) {}

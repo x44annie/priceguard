@@ -1,4 +1,4 @@
-package com.data.priceguard.dto;
+package com.data.priceguard.dto.response;
 
 import java.util.UUID;
 

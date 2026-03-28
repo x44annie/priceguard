@@ -8,6 +8,7 @@ application-dev.properties
 application-prod.properties
 src/main/resources/application-dev.properties
 .env
+request.http
 
 ### STS ###
 .apt_generated
