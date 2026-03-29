@@ -5,10 +5,10 @@ WORKDIR /app
 COPY gradlew ./
 COPY gradle gradle
 COPY build.gradle settings.gradle ./
-RUN ./gradlew dependencies || true
+RUN ./gradlew dependencies --no-daemon
 
 COPY src src
-RUN ./gradlew bootJar -x test
+RUN ./gradlew bootJar -x test --no-daemon
 
 # RUNTIME STAGE
 FROM eclipse-temurin:25-jre-alpine
