@@ -2,6 +2,7 @@ package com.data.priceguard.controller;
 
 import com.data.priceguard.dto.request.UserLoginRequest;
 import com.data.priceguard.dto.request.UserRegisterRequest;
+import com.data.priceguard.dto.response.AuthResponse;
 import com.data.priceguard.dto.response.UserResponse;
 import com.data.priceguard.service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -30,8 +31,8 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserResponse> login(@RequestBody UserLoginRequest dto) {
-        UserResponse response = authService.login(dto);
+    public ResponseEntity<AuthResponse> login(@RequestBody UserLoginRequest dto) {
+        AuthResponse response = authService.login(dto);
         return ResponseEntity.ok(response);
     }
 }

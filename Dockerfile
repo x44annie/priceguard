@@ -1,5 +1,5 @@
 # BUILD STAGE
-FROM gradle:9.1.0-jdk25-alpine AS builder
+FROM gradle:9.4.0-jdk25-alpine AS builder
 WORKDIR /app
 
 COPY gradlew ./

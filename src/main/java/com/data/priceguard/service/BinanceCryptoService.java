@@ -36,7 +36,7 @@ public class BinanceCryptoService extends CryptoService {
                 .onStatus(HttpStatusCode::isError, clientResponse ->
                         clientResponse.bodyToMono(String.class)
                                 .flatMap(errorBody -> Mono.error(
-                                        new BinancePriceException("Binace API error" + errorBody)
+                                        new BinancePriceException("Binance API error" + errorBody)
                                 ))
                 )
                 .bodyToMono(CryptoAlertResponse.class)
